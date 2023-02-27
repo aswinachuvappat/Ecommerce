@@ -1,0 +1,71 @@
+<!-- category Section-->
+<div class="container-fluid ">
+    <div class="container d-flex">
+        <div  class="p-2 mt-4" style="border: radius 10px;">
+            <a (click)="filter('')">
+                <img style="width:200px; height: 200px; border-radius: 20px;" class=" border border-3 p-2" src="https://i.postimg.cc/tT6z5F6G/cart-img.png" alt="">
+                <h6 style="text-align:center; color:darkblue"> all product</h6>
+            </a>
+        </div>
+        <div class="p-2 mt-4" style="border: radius 10px;">
+            <a (click)="filter(2)">
+                <img  style="width:200px; height: 200px; border-radius: 20px;" class="p-2 border border-3" src="https://i.postimg.cc/ZR3qjxLm/fassionimg.jpg" alt="">
+                <h6 style="text-align:center; color:darkblue">fassion</h6>
+            </a>
+        </div>
+        <div class="p-2 mt-4" style="border: radius 10px;">
+            <a (click)="filter(1)">
+                <img  style="width:200px; height: 200px; border-radius: 20px;" class="p-2 border border-3" src="https://i.postimg.cc/WzGhpwD8/electronicsimg.jpg" alt="">
+                <h6 style="text-align:center; color:darkblue">electronics</h6>
+            </a>
+        </div>
+        <div class="p-2 mt-4" style="border: radius 10px;">
+            <a (click)="filter(3)">
+                <img style="width:200px; height: 200px; border-radius: 20px;" class="p-2 border border-3" src="https://i.postimg.cc/nVDmwvLC/jwelleryimg.webp" alt="">
+                <h6 style="text-align:center; color:darkblue">jwellery</h6>
+            </a>
+        </div>
+        <div class="p-2 mt-4" style="border: radius 10px;">
+            <a (click)="filter(4)">
+                <img style="width:200px; height: 200px; border-radius: 20px;" class="p-2 border border-3" src="https://i.postimg.cc/Z5PjXvjL/toys.jpg" alt="">
+                <h6 style="text-align:center; color:darkblue">Toys</h6>
+            </a>
+        </div>
+        <div class="p-2 mt-4" style="border: radius 10px;">
+            <a (click)="filter(5)">
+                <img style="width:200px; height: 200px; border-radius: 20px;" class="p-2 border border-3" src="https://i.postimg.cc/bvjRqx35/footwear.jpg" alt="">
+                <h6 style="text-align:center; color:darkblue">Footwear</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let product of filtercategory | filter:searchkey:'productName' " class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img style="height: 414px;" class="card-img-top" src="{{product.productImg}}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{product.productName}}</h5>
+                            <!-- Product price-->
+                            {{product.price}}Rs
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="products/view-product/{{product.id}}">View options</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+<!-- product secton -->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{productdata.productImg}}" alt="..." />
+            </div>
+            <div class="col-md-6">
+                <!-- <div class="small mb-1 ">{{productdata.id}}</div> -->
+                <h1 class="display-5 fw-bolder">{{productdata.productName}}</h1><br>
+                <div class="fs-5 mb-5">
+                    <span class="fw-bolder">{{productdata.price}} Rs</span><br><br>
+                
+                     <span class="bg-warning p-1 border border-2" style="border-radius: 10px;">{{productdata.rating}} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                      </svg></span>
+                
+            </div>
+
+
+                <p class="lead">{{productdata.description}}</p>
+
+                <div>
+                    <a href="products/edit-product/{{productdata.id}}"> <button type="button"
+                            class="btn btn-success">edit-product</button></a> <br><br>
+                    <a href="products/delete-product/{{productdata.id}}"><button type="button"
+                            class="btn btn-danger">delete-product</button></a>
+                </div>
+                <br><br>
+                <div class="d-flex">
+                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
+                        style="max-width: 3rem" />
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
